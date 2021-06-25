@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Create four equal columns that floats next to each other */
+        .column {
+            float: left;
+            width: 25%;
+            padding: 10px;
+            height: 250px;
+            /* Should be removed. Only for demonstration */
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        .header:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
+</head>
+<body style="font-family: 'Roboto', sans-serif;">
+    <header id='pageHeader' class="header">
+        <div style="float: left;">
+            <img style="width: 200px;" src="{{imgSrc}}"/>
+        </div>
+        <div style="float: right;">
+            <span style="font-weight: 700;
+            font-size: 1em; color: #FF652D;">¡Más barato, más facil!</span>
+        </div>
+    </header>
+    <div class="row">
+        {{#each users}}
+        <div class="column">
+            <div style="text-align: center;">
+                <img style="margin: 0 auto" height="130" src="{{this.url}}">
+            </div>
+            <div style="height: 50px; overflow:hidden">
+                <p style="margin-bottom: 0; font-size: 10px ;"> {{this.DESCR}}</p>
+            </div>
+            <p style="color: #FF652D;margin-top:1px;font-size:13px">
+                <strong>${{this.CAMPLIB13}} MXN</strong>
+            </p>
+        </div>
+        {{/each}}
+    </div>
+    <div id="pageFooter" style="width:100%;background-color:#FF652D;padding:0 2px; color:#FFF;"><span style="color: #FFF;" >Visita nuestra página, más barato más fácil.<p style="color:#FFF; font-size:10px !important" >* Todos los productos están sujetos a disponibilidad y todos los precios a cambios sin previo aviso.</p></div>
+
+</body>
+
+</html>
